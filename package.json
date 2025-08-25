@@ -1,0 +1,25 @@
+{
+  "name": "ai-security-check-mcp-service",
+  "version": "1.0.1",
+  "description": "基于MCP<JSON-RPC>的前端工程通用的安全依赖审计工具，获得超过 npm audit 的体验。",
+  "main": "bin/index.js",
+  "bin": {
+    "ai-security-check-mcp-service": "bin/index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.1",
+    "ejs": "^3.1.10",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node bin/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

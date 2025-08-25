@@ -1,0 +1,14 @@
+<section class="vulnerability-category">
+    <div class="card">
+        <div class="card-header" style="<%- type === 'critical' ? 'color: var(--critical-color);' : '' %><%- type === 'high' ? 'color: var(--high-color);' : '' %><%- type === 'moderate' ? 'color: var(--moderate-color);' : '' %><%- type === 'low' ? 'color: var(--low-color);' : '' %>">
+            <h2 style="margin: 0;"><%- desc.severityLevels[type] %>漏洞</h2>
+        </div>
+        <div class="card-body">
+            <p>共计 <strong><%- audit.summary[type] %></strong> 个</p>
+            
+            <% audit.vulnerabilities[type].forEach(function(item){ %>
+                <%- include('./detail-item.ejs', {item: item}) %>
+            <% }); %>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,67 @@
+<div class="vulnerability-item">
+    <h3><span class="code"><%- item.name %></span></h3>
+    
+    <div class="card">
+        <div class="card-header">
+            漏洞描述
+        </div>
+        <div class="card-body">
+            <ul>
+                <% item.problems.forEach((problem) => { %>
+                <li>
+                    <p><strong><%- problem.title %></strong></p>
+                    <ul>
+                        <li>npm漏洞编号：<span class="code"><%- problem.source %></span></li>
+                        <li>漏洞详细说明：<a href="<%- problem.url %>" target="_blank"><%- problem.url %></a></li>
+                        <li>漏洞等级：<%- desc.severityLevels[problem.severity] %></li>
+                        <li>受影响的版本：<span class="code"><%- problem.range %></span></li>
+                    </ul>
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            依赖关系
+        </div>
+        <div class="card-body">
+            <% if(item.depChains.length === 0) { %>
+                <% if(item.name === packageJson.name) { %>
+                    <p>当前工程</p>
+                <% } else { %>
+                    <p><span class="code"><%- packageJson.name %></span> / <span class="code"><%- item.name %></span></p>
+                <% } %>
+            <% } else { %>
+                <ul>
+                    <% item.depChains.forEach((chain) => { %>
+                        <li>
+                            <% if(chain.length === 1 && chain[0] === packageJson.name) { %>
+                                当前工程
+                            <% } else { %>
+                                <span class="code"><%- packageJson.name %></span> / 
+                                <% chain.forEach((c, index) => { %>
+                                    <span class="code"><%- c %></span><% if(index < chain.length - 1) { %> / <% } %>
+                                <% }); %>
+                            <% } %>
+                        </li>
+                    <% }); %>
+                </ul>
+            <% } %>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            漏洞包所在目录
+        </div>
+        <div class="card-body">
+            <ul>
+                <% item.nodes.forEach((path) => { %>
+                    <li><span class="code"><%- path %></span></li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+</div>
