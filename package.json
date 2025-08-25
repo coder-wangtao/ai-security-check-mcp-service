@@ -1,6 +1,6 @@
 {
   "name": "ai-security-check-mcp-service",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "基于MCP<JSON-RPC>的前端工程通用的安全依赖审计工具，获得超过 npm audit 的体验。",
   "main": "bin/index.js",
   "bin": {

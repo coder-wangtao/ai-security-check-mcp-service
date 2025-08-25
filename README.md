@@ -15,17 +15,15 @@
 6. **删除工作目录**：将之前创建的临时工作目录删除
 7. **将结果保存到指定路径**：将审计结果最终输出为一份可友好查看的文件
 
-### frontend-audit-mcp-server
+### ai-security-check-mcp-service
 
 这是一个基于 Node.js 的 MCP Server，通过标准输入输出（STDIO）与 MCP 客户端通信。可以使用 `npx @modelcontextprotocol/inspector` 来进行调试。
 
-## 安装
+## 安装和使用
 
-全局安装：
+全局安装或者直接使用 npx 运行：：
 ```bash
 npm install -g ai-security-check-mcp-service
-
-// 或者直接使用 npx 运行：
 
 npx ai-security-check-mcp-service
 ```
