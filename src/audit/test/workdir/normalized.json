@@ -214,6 +214,22 @@
               "vectorString": null
             },
             "range": "<0.30.0"
+          },
+          {
+            "source": 1108262,
+            "name": "axios",
+            "dependency": "axios",
+            "title": "Axios is vulnerable to DoS attack through lack of data size check",
+            "url": "https://github.com/advisories/GHSA-4hjh-wcwx-xvwj",
+            "severity": "high",
+            "cwe": [
+              "CWE-770"
+            ],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "range": "<0.30.2"
           }
         ],
         "nodes": [
@@ -252,28 +268,6 @@
         ],
         "depChains": [
           [
-            "@vue/cli-plugin-babel",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "watchpack",
-            "watchpack-chokidar2",
-            "chokidar",
-            "braces"
-          ],
-          [
-            "@vue/cli-plugin-router",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "watchpack",
-            "watchpack-chokidar2",
-            "chokidar",
-            "braces"
-          ],
-          [
-            "@vue/cli-plugin-vuex",
-            "@vue/cli-service",
             "@intervolga/optimize-cssnano-plugin",
             "webpack",
             "watchpack",
@@ -440,32 +434,6 @@
             "braces"
           ],
           [
-            "@vue/cli-plugin-babel",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "watchpack",
-            "watchpack-chokidar2",
-            "chokidar",
-            "anymatch",
-            "micromatch",
-            "braces"
-          ],
-          [
-            "@vue/cli-plugin-router",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "watchpack",
-            "watchpack-chokidar2",
-            "chokidar",
-            "anymatch",
-            "micromatch",
-            "braces"
-          ],
-          [
-            "@vue/cli-plugin-vuex",
-            "@vue/cli-service",
             "@intervolga/optimize-cssnano-plugin",
             "webpack",
             "watchpack",
@@ -686,32 +654,6 @@
             "braces"
           ],
           [
-            "@vue/cli-plugin-babel",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "watchpack",
-            "watchpack-chokidar2",
-            "chokidar",
-            "readdirp",
-            "micromatch",
-            "braces"
-          ],
-          [
-            "@vue/cli-plugin-router",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "watchpack",
-            "watchpack-chokidar2",
-            "chokidar",
-            "readdirp",
-            "micromatch",
-            "braces"
-          ],
-          [
-            "@vue/cli-plugin-vuex",
-            "@vue/cli-service",
             "@intervolga/optimize-cssnano-plugin",
             "webpack",
             "watchpack",
@@ -914,24 +856,6 @@
             "braces"
           ],
           [
-            "@vue/cli-plugin-babel",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "micromatch",
-            "braces"
-          ],
-          [
-            "@vue/cli-plugin-router",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "micromatch",
-            "braces"
-          ],
-          [
-            "@vue/cli-plugin-vuex",
-            "@vue/cli-service",
             "@intervolga/optimize-cssnano-plugin",
             "webpack",
             "micromatch",
@@ -1256,30 +1180,6 @@
         ],
         "depChains": [
           [
-            "@vue/cli-plugin-babel",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "watchpack",
-            "watchpack-chokidar2",
-            "chokidar",
-            "anymatch",
-            "micromatch"
-          ],
-          [
-            "@vue/cli-plugin-router",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "watchpack",
-            "watchpack-chokidar2",
-            "chokidar",
-            "anymatch",
-            "micromatch"
-          ],
-          [
-            "@vue/cli-plugin-vuex",
-            "@vue/cli-service",
             "@intervolga/optimize-cssnano-plugin",
             "webpack",
             "watchpack",
@@ -1479,30 +1379,6 @@
             "micromatch"
           ],
           [
-            "@vue/cli-plugin-babel",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "watchpack",
-            "watchpack-chokidar2",
-            "chokidar",
-            "readdirp",
-            "micromatch"
-          ],
-          [
-            "@vue/cli-plugin-router",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "watchpack",
-            "watchpack-chokidar2",
-            "chokidar",
-            "readdirp",
-            "micromatch"
-          ],
-          [
-            "@vue/cli-plugin-vuex",
-            "@vue/cli-service",
             "@intervolga/optimize-cssnano-plugin",
             "webpack",
             "watchpack",
@@ -1687,22 +1563,6 @@
             "micromatch"
           ],
           [
-            "@vue/cli-plugin-babel",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "micromatch"
-          ],
-          [
-            "@vue/cli-plugin-router",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "webpack",
-            "micromatch"
-          ],
-          [
-            "@vue/cli-plugin-vuex",
-            "@vue/cli-service",
             "@intervolga/optimize-cssnano-plugin",
             "webpack",
             "micromatch"
@@ -2025,7 +1885,7 @@
         "severity": "high",
         "problems": [
           {
-            "source": 1105256,
+            "source": 1108429,
             "name": "webpack-dev-server",
             "dependency": "webpack-dev-server",
             "title": "webpack-dev-server users' source code may be stolen when they access a malicious web site with non-Chromium based browser",
@@ -2041,7 +1901,7 @@
             "range": "<=5.2.0"
           },
           {
-            "source": 1105257,
+            "source": 1108430,
             "name": "webpack-dev-server",
             "dependency": "webpack-dev-server",
             "title": "webpack-dev-server users' source code may be stolen when they access a malicious web site",
@@ -2095,20 +1955,6 @@
         ],
         "depChains": [
           [
-            "@vue/cli-plugin-babel",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "postcss"
-          ],
-          [
-            "@vue/cli-plugin-router",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "postcss"
-          ],
-          [
-            "@vue/cli-plugin-vuex",
-            "@vue/cli-service",
             "@intervolga/optimize-cssnano-plugin",
             "postcss"
           ],
@@ -2136,6 +1982,20 @@
             "postcss"
           ],
           [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "autoprefixer",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "autoprefixer",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
             "autoprefixer",
             "postcss"
           ],
@@ -2162,22 +2022,6 @@
             "postcss"
           ],
           [
-            "@vue/cli-plugin-babel",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "cssnano",
-            "postcss"
-          ],
-          [
-            "@vue/cli-plugin-router",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "cssnano",
-            "postcss"
-          ],
-          [
-            "@vue/cli-plugin-vuex",
-            "@vue/cli-service",
             "@intervolga/optimize-cssnano-plugin",
             "cssnano",
             "postcss"
@@ -2201,24 +2045,6 @@
             "postcss"
           ],
           [
-            "@vue/cli-plugin-babel",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "cssnano",
-            "cssnano-preset-default",
-            "postcss"
-          ],
-          [
-            "@vue/cli-plugin-router",
-            "@vue/cli-service",
-            "@intervolga/optimize-cssnano-plugin",
-            "cssnano",
-            "cssnano-preset-default",
-            "postcss"
-          ],
-          [
-            "@vue/cli-plugin-vuex",
-            "@vue/cli-service",
             "@intervolga/optimize-cssnano-plugin",
             "cssnano",
             "cssnano-preset-default",

@@ -1,20 +1,22 @@
-import fs from 'fs';
-import { join, dirname } from 'path';
-import { runCommand } from '../common/utils.js';
+import fs from "fs";
+import { join, dirname } from "path";
+import { runCommand } from "../common/utils.js";
 
 // 写入 package.json
 async function writePackageJson(workDir, packageJson) {
-  const packageJsonPath = join(workDir, 'package.json');
-  fs.mkdirSync(dirname(packageJsonPath), { recursive: true });
+  const packageJsonPath = join(workDir, "package.json");
+  fs.mkdirSync(dirname(packageJsonPath), { recursive: true });  // 创建文件夹
+
   await fs.promises.writeFile(
     packageJsonPath,
     JSON.stringify(packageJson),
-    'utf8'
+    "utf8"
   );
 }
 
 // 创建 lock 文件
 async function createLockFile(workDir) {
+  // 只生成或更新 package-lock.json 文件，而不实际安装 node_modules。
   const cmd = `npm install --package-lock-only --force`;
   await runCommand(cmd, workDir); // 在工作目录中执行命令
 }

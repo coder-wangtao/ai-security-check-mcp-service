@@ -15,17 +15,19 @@ function parseGithubUrl(url) {
     const parsedUrl = new URL(url);
 
     // 确保是 github.com
-    if (parsedUrl.hostname !== 'github.com') {
-      throw new Error('Only github.com URLs are supported');
+    if (parsedUrl.hostname !== "github.com") {
+      throw new Error("Only github.com URLs are supported");
     }
 
     // 获取路径并去除空字符串（如开头的 /）
-    const parts = parsedUrl.pathname.split('/').filter(Boolean);
+    // split('/') 将路径按 / 分割成数组，例如 ['', 'owner', 'repo', 'tree', 'v5.2.2']
+    // filter(Boolean) 去掉空字符串，得到 ['owner', 'repo', 'tree', 'v5.2.2']
+    const parts = parsedUrl.pathname.split("/").filter(Boolean);
 
     // 至少需要 owner 和 repo 两段
     if (parts.length < 2) {
       throw new Error(
-        'Invalid GitHub repository URL: insufficient path segments'
+        "Invalid GitHub repository URL: insufficient path segments"
       );
     }
 
@@ -34,12 +36,12 @@ function parseGithubUrl(url) {
     const restPath = parts.slice(2); // 剩余路径，如 ['tree', 'v5.2.2']
 
     // 构造 path：如果有后续路径，则以 '/' 开头拼接；否则为空字符串
-    const path = restPath.length > 0 ? '/' + restPath.join('/') : '';
+    const path = restPath.length > 0 ? "/" + restPath.join("/") : "";
 
     return { owner, repo, path };
   } catch (error) {
     if (error instanceof TypeError) {
-      throw new Error('Invalid URL: malformed or missing');
+      throw new Error("Invalid URL: malformed or missing");
     }
     throw error;
   }
@@ -47,8 +49,8 @@ function parseGithubUrl(url) {
 
 async function getPackageJsonUrl(gitInfo) {
   let { owner, repo, path } = gitInfo;
-  if (path.startsWith('/tree/')) {
-    const pathParts = path.split('/').filter(Boolean);
+  if (path.startsWith("/tree/")) {
+    const pathParts = path.split("/").filter(Boolean);
     path = `tags/${pathParts[1]}`;
   } else {
     const url = `https://api.github.com/repos/${owner}/${repo}`;

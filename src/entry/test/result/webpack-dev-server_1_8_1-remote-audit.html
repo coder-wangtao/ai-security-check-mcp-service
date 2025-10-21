@@ -147,13 +147,13 @@
                 
                 <div class="summary-item high">
                     <div>高危漏洞</div>
-                    <div class="count">0</div>
+                    <div class="count">1</div>
                     <div>个</div>
                 </div>
                 
                 <div class="summary-item moderate">
                     <div>中危漏洞</div>
-                    <div class="count">1</div>
+                    <div class="count">0</div>
                     <div>个</div>
                 </div>
                 
@@ -181,12 +181,10 @@
     
     
     
-    
-    
         <section class="vulnerability-category">
     <div class="card">
-        <div class="card-header" style="color: var(--moderate-color);">
-            <h2 style="margin: 0;">中危漏洞</h2>
+        <div class="card-header" style="color: var(--high-color);">
+            <h2 style="margin: 0;">高危漏洞</h2>
         </div>
         <div class="card-body">
             <p>共计 <strong>1</strong> 个</p>
@@ -201,6 +199,16 @@
         </div>
         <div class="card-body">
             <ul>
+                
+                <li>
+                    <p><strong>Missing Origin Validation in webpack-dev-server</strong></p>
+                    <ul>
+                        <li>npm漏洞编号：<span class="code">1087645</span></li>
+                        <li>漏洞详细说明：<a href="https://github.com/advisories/GHSA-cf66-xwfp-gvc4" target="_blank">https://github.com/advisories/GHSA-cf66-xwfp-gvc4</a></li>
+                        <li>漏洞等级：高危</li>
+                        <li>受影响的版本：<span class="code"><3.1.11</span></li>
+                    </ul>
+                </li>
                 
                 <li>
                     <p><strong>webpack-dev-server users' source code may be stolen when they access a malicious web site with non-Chromium based browser</strong></p>
@@ -256,6 +264,8 @@
         </div>
     </div>
 </section>
+    
+    
     
     
     

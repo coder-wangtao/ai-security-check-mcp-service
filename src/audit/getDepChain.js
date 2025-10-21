@@ -45,3 +45,33 @@ export function getDepChains(node, globalNodeMap) {
 
   return chains;
 }
+
+// 假设我们有这样一个依赖关系图（像 npm 的包依赖结构）：
+// A → B → D
+// A → C → D
+// 即：
+// A 依赖 B 和 C
+// B 依赖 D
+// C 依赖 D
+// D 没有依赖
+
+const globalNodeMap = {
+  A: { name: "A", effects: ["B", "C"] },
+  B: { name: "B", effects: ["D"] },
+  C: { name: "C", effects: ["D"] },
+  D: { name: "D", effects: [] },
+};
+
+// 从 A 开始
+// currentPath = [A]
+// 访问 B
+// currentPath = [B, A]
+// 访问 D
+// currentPath = [D, B, A]
+// D 没有依赖 → 保存路径
+// ✅ 第一条链：["D", "B", "A"]
+// 回溯回到 A，访问 C
+// currentPath = [C, A]
+// 访问 D
+// currentPath = [D, C, A]
+// ✅ 第二条链：["D", "C", "A"]

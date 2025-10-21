@@ -1,9 +1,9 @@
-import { createWorkDir, deleteWorkDir } from '../workDir/index.js';
-import { parseProject } from '../parseProject/index.js';
-import { generateLock } from '../generateLock/index.js';
-import { audit } from '../audit/index.js';
-import { render } from '../render/index.js';
-import fs from 'fs';
+import { createWorkDir, deleteWorkDir } from "../workDir/index.js";
+import { parseProject } from "../parseProject/index.js";
+import { generateLock } from "../generateLock/index.js";
+import { audit } from "../audit/index.js";
+import { render } from "../render/index.js";
+import fs from "fs";
 
 /**
  * 根据项目根目录，审计项目中所有的包（含项目本身）
@@ -14,6 +14,7 @@ export async function auditPackage(projectRoot, savePath) {
   // 1. 创建工作目录
   const workDir = await createWorkDir();
   // 2. 解析项目，向工作目录添加pacakge.json
+  // packageJson 是一个json文件
   const packageJson = await parseProject(projectRoot);
   // 3. 生成lock文件
   await generateLock(workDir, packageJson);

@@ -1,15 +1,18 @@
-import { npmAudit } from './npmAudit.js';
-import { normalizeAuditResult } from './normalizeAuditResult.js';
-import { currentAudit } from './currentAudit.js';
+import { npmAudit } from "./npmAudit.js";
+import { normalizeAuditResult } from "./normalizeAuditResult.js";
+import { currentAudit } from "./currentAudit.js";
 
 export async function audit(workDir, packageJson) {
-  // 调用 npmAudit 获取审计结果
+  // workDir: jzs76uw3tngmgzzhud3
+  // packageJson: json对象
+  // 调用 npmAudit 获取审计结果 auditResult是一个json对象
   const auditResult = await npmAudit(workDir);
   // 规范化审计结果
   const normalizedResult = normalizeAuditResult(auditResult);
 
   // 添加当前工程的审计结果
   const current = await currentAudit(packageJson.name, packageJson.version);
+
   if (current) {
     normalizedResult.vulnerabilities[current.severity].unshift(current);
   }
